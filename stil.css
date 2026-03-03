@@ -29,14 +29,22 @@ header h1{
   text-shadow:0 0 20px red;
 }
 
+.sidebar h1{
+  text-align: center;
+  font-family:'Anton';
+  font-size:2rem;
+  letter-spacing:5px;
+  text-shadow:0 0 20px red;
+}
+
 /* NAV */
 
 nav{
   background:#0c0000;
   display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:15px;
+  align-items:center;
+  padding:15px 30px;
+  position:relative;
 }
 
 nav a{
@@ -64,6 +72,14 @@ nav a::after{
 
 nav a:hover::after{
   width:100%;
+}
+
+.nav-links{
+  display:flex;
+  gap:50px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
 }
 
 /* LAYOUT */
@@ -401,3 +417,29 @@ footer{
   color:#ff9999;
 }
 
+/* NAV SEARCH */
+
+.nav-search{
+  margin-left:auto;
+}
+
+.nav-search input{
+  background:#120000;
+  border:1px solid red;
+  color:white;
+  padding:6px 12px;
+  border-radius:6px;
+  outline:none;
+  font-family:'Oswald';
+  width:180px;
+  transition:.3s;
+}
+
+.nav-search input::placeholder{
+  color:#ff8888;
+}
+
+.nav-search input:focus{
+  width:240px;
+  box-shadow:0 0 10px red;
+}

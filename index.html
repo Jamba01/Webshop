@@ -17,9 +17,21 @@
 </header>
 
 <nav>
-<a onclick="showPage('home')">Főoldal</a>
-<a onclick="showPage('contact')">Kapcsolat</a>
-<a onclick="showPage('cart')">Kosár (<span id="cartCount">0</span>)</a>
+<div class="nav-links"> 
+  <a onclick="showPage('home')">Főoldal</a>
+  <a onclick="showPage('contact')">Kapcsolat</a>
+  <a onclick="showPage('cart')">Kosár (<span id="cartCount">0</span>)</a>
+</div> 
+<div class="nav-search">
+
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Keresés... (pl: Rövidzárlat)"
+    onkeyup="searchProducts()"
+  >
+
+</div>
 </nav>
 
 <main class="container">
@@ -27,7 +39,8 @@
 <!-- SIDEBAR -->
 
 <aside class="sidebar">
-
+<h1>Szűrő</h1>
+<br>
 <button onclick="toggleCat(0)">Edzéselőtti formulák</button>
 <div class="category-content">
 <a onclick="showPage('kalamajka')">Kalamajka</a>
@@ -126,7 +139,7 @@ Ha puhány vagy, rossz helyen jársz.
 
 </div>
 
-<h2>Kiemelt Termékek</h2>
+<h2>Termékek</h2>
 
 <div class="products">
 
@@ -147,6 +160,18 @@ Ha puhány vagy, rossz helyen jársz.
 <img src="Projekt termékek/Fehérje 1.png">
 <h3>Eszement</h3>
 <p class="price">14 990 Ft</p>
+</div>
+
+<div class="product" onclick="showPage('kuma')">
+<img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png">
+<h3>Kuma átka</h3>
+<p class="price">10 990 Ft</p>
+</div>
+
+<div class="product" onclick="showPage('feherje2')">
+<img src="Projekt termékek/protein2.png">
+<h3>Overload</h3>
+<p class="price">11 870 Ft</p>
 </div>
 
 </div>
@@ -422,6 +447,38 @@ function checkout(){
 
 function goBack(){
   showPage('home');
+}
+
+/* SEARCH SYSTEM */
+
+function searchProducts(){
+
+  const input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  const products =
+    document.querySelectorAll(".product");
+
+  products.forEach(product=>{
+
+    const name =
+      product
+      .querySelector("h3")
+      .innerText
+      .toLowerCase();
+
+    if(name.includes(input)){
+      product.style.display="flex";
+    }else{
+      product.style.display="none";
+    }
+
+  });
+
+  // automatikusan főoldalra dob
+  showPage("home");
 }
 
 </script>
