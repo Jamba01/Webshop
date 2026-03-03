@@ -5,313 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kengo Nutrition</title>
-
+<link rel="stylesheet" href="stil.css">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Anton&display=swap" rel="stylesheet">
 
-<style>
-
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Oswald',sans-serif;
-  background:radial-gradient(circle at top,#1a0000,#000);
-  color:#fff;
-}
-
-/* HEADER */
-
-header{
-  background:linear-gradient(135deg,#ff0000,#550000);
-  padding:30px;
-  text-align:center;
-  border-bottom:4px solid red;
-}
-
-header h1{
-  font-family:'Anton';
-  font-size:3.5rem;
-  letter-spacing:5px;
-  text-shadow:0 0 20px red;
-}
-
-/* NAV */
-
-nav{
-  background:#0c0000;
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:15px;
-}
-
-nav a{
-  color:#ff4444;
-  cursor:pointer;
-  font-weight:600;
-  position:relative;
-  transition:.3s;
-}
-
-nav a:hover{
-  color:white;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0%;
-  height:2px;
-  background:red;
-  transition:.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-/* LAYOUT */
-
-.container{
-  display:grid;
-  grid-template-columns:260px 1fr;
-  gap:25px;
-  padding:30px;
-}
-
-@media(max-width:900px){
-  .container{
-    grid-template-columns:1fr;
-  }
-}
-
-/* SIDEBAR */
-
-.sidebar{
-  background:#070000;
-  border:2px solid red;
-  border-radius:10px;
-  padding:20px;
-}
-
-.sidebar button{
-  width:100%;
-  background:linear-gradient(135deg,#ff0000,#770000);
-  border:none;
-  color:white;
-  padding:12px;
-  margin-bottom:8px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.sidebar button:hover{
-  box-shadow:0 0 15px red;
-}
-
-.category-content{
-  display:none;
-  background:#120000;
-  border:1px solid red;
-  margin-bottom:15px;
-}
-
-.category-content a{
-  display:block;
-  padding:10px;
-  color:#ffaaaa;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.category-content a:hover{
-  background:#220000;
-  color:white;
-}
-
-/* MAIN */
-
-.main{
-  background:#050000;
-  border:2px solid red;
-  border-radius:12px;
-  padding:25px;
-  min-height:600px;
-}
-
-/* PAGES */
-
-.page{
-  display:none;
-  animation:fade .4s ease;
-}
-
-.page.active{
-  display:block;
-}
-
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* PRODUCTS */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-  margin-top:25px;
-}
-
-@media(max-width:1000px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:600px){
-  .products{
-    grid-template-columns:1fr;
-  }
-}
-
-.product{
-  background:linear-gradient(180deg,#1a0000,#070000);
-  border:2px solid red;
-  border-radius:12px;
-  padding:25px;
-  text-align:center;
-  cursor:pointer;
-  transition:.35s ease;
-  min-height:430px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.product:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 35px rgba(255,0,0,.6);
-}
-
-.product img{
-  width:100%;
-  height:350px;
-  object-fit:contain;
-  margin-bottom:15px;
-}
-
-.price{
-  color:#ff5555;
-  font-weight:bold;
-  font-size:1.2rem;
-}
-
-/* PRODUCT PAGE */
-
-.product-box{
-  max-width:800px;
-}
-
-.big-image{
-  width:100%;
-  max-height:500px;
-  object-fit:contain;
-  border:3px solid red;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-
-.add-btn{
-  background:linear-gradient(135deg,#ff0000,#880000);
-  border:none;
-  color:white;
-  padding:12px 25px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:15px;
-  transition:.3s;
-}
-
-.add-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 15px red;
-}
-
-.back-btn{
-  display:inline-block;
-  margin-bottom:15px;
-  background:linear-gradient(135deg,#ff0000,#660000);
-  border:none;
-  color:white;
-  padding:8px 18px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.back-btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 12px red;
-  background:#ff2222;
-}
-
-/* CART */
-
-.cart-item{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  border-bottom:1px solid red;
-  padding:10px 0;
-}
-
-.cart-item input{
-  width:50px;
-}
-
-.checkout-btn{
-  margin-top:20px;
-  background:red;
-  border:none;
-  color:white;
-  padding:12px 25px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.checkout-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px red;
-}
-
-/* FOOTER */
-
-footer{
-  background:#100000;
-  border-top:2px solid red;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-}
-
-</style>
 </head>
 
 <body>
@@ -383,6 +79,58 @@ footer{
 <!-- HOME -->
 
 <div id="home" class="page active">
+
+<div class="hero-box">
+
+  <h1>ÜDV A KENGO NUTRITION-NÉL</h1>
+
+  <p class="hero-text">
+    Nem vitaminbolt. Nem hobby.  
+    Ez mentális káosz izomban.
+  </p>
+
+  <p class="hero-sub">
+    Rövidzárlat. Agyrobbanás. Idegbaj.  
+    Csak azoknak, akik komolyan tolják.
+  </p>
+
+  <button class="hero-btn" onclick="showPage('kalamajka')">
+    KEZDŐDJÖN AZ ŐRÜLET
+  </button>
+
+</div>
+
+<div class="why-us">
+
+  <div class="why-box">
+    💥 Brutális formulák  
+    <span>Nem felhígított por.</span>
+  </div>
+
+  <div class="why-box">
+    ⚡ Gyors szállítás  
+    <span>Nem ülünk rajta hetekig.</span>
+  </div>
+
+  <div class="why-box">
+    🧠 Valódi fókusz  
+    <span>Nem placebo.</span>
+  </div>
+
+  <div class="why-box">
+    🏋️ Kondisoknak  
+    <span>Nem nyugdíjas vitamin.</span>
+  </div>
+
+</div>
+
+<div class="warning-box">
+
+⚠️ FIGYELEM ⚠️<br>
+Ez nem kezdőknek való webshop.  
+Ha puhány vagy, rossz helyen jársz.
+
+</div>
 
 <h2>Kiemelt Termékek</h2>
 
@@ -509,9 +257,37 @@ Kosárba
 
 <div id="contact" class="page">
 
-<h2>Kapcsolat</h2><br>
+  <h2>Kapcsolat</h2>
+  <p class="contact-intro">
+    Kérdésed van? Elborult az adagolás? Nem tudod, melyik cucc robbantja szét legjobban az edzésed?
+    Írj nekünk. Válaszolunk. Nem ghostolunk.
+  </p>
 
-<p>Email: info@kengo.hu</p>
+  <div class="contact-box">
+    <br>
+    <h3>📩 Elérhetőség</h3>
+    <p><strong>Email:</strong><i> info@kengo.hu</i></p>
+    <p><strong>Válaszidő:</strong> 24–48 óra (edzésidőn kívül 😉)</p>
+    <br>
+    <h3>📦 Rendeléssel kapcsolatban</h3>
+    <p>
+      Ha kérdésed van a szállításról, fizetésről vagy a csomagoddal,
+      írd meg a rendelési azonosítót is, hogy ne kelljen találgatnunk.
+    </p>
+    <br>
+    <h3>💥 Termékekkel kapcsolatban</h3>
+    <p>
+      Nem tudod, hogy <em>Rövidzárlat</em>, <em>Agyrobbanás</em> vagy <em>Idegbaj</em> való neked?
+      Segítünk kiválasztani a neked való brutál cuccot.
+    </p>
+    <br>
+    <h3>⚠️ Fontos</h3>
+    <p class="contact-warning">
+      A termékeink erősek. Ha érzékeny vagy koffeinre vagy stimulánsokra,
+      mindig olvasd el a leírást. Ha bizonytalan vagy: kérdezz, mielőtt beletolod.
+    </p>
+
+  </div>
 
 </div>
 
@@ -535,7 +311,7 @@ Vásárlás
 </main>
 
 <footer>
-© 2026 Kengó Konyha
+© 2026 Kengo Nutrition
 </footer>
 
 <script>
