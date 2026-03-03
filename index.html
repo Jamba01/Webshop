@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kengó Konyha</title>
+<title>Kengo Nutrition</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Anton&display=swap" rel="stylesheet">
 
@@ -317,7 +317,7 @@ footer{
 <body>
 
 <header>
-<h1>KENGÓ KONYHA</h1>
+<h1>KENGO NUTRITION</h1>
 </header>
 
 <nav>
@@ -332,15 +332,46 @@ footer{
 
 <aside class="sidebar">
 
-<button onclick="toggleCat(0)">Pre-Workout</button>
+<button onclick="toggleCat(0)">Edzéselőtti formulák</button>
 <div class="category-content">
 <a onclick="showPage('kalamajka')">Kalamajka</a>
 <a onclick="showPage('kuma')">Kuma Átka</a>
+<a onclick="showPage('rovidzarlat')">Rövidzárlat</a>
 </div>
 
-<button onclick="toggleCat(1)">Fehérje</button>
+<button onclick="toggleCat(1)">Fehérjék</button>
 <div class="category-content">
 <a onclick="showPage('feherje')">Eszement</a>
+<a onclick="showPage('feherje2')">Overload</a>
+</div>
+
+<button onclick="toggleCat(2)">Tömegnövelők</button>
+<div class="category-content">
+<a onclick="showPage('')">Tömegnövelő 1</a>
+</div>
+
+<button onclick="toggleCat(3)">Kreatin</button>
+<div class="category-content">
+<a onclick="showPage('')">Kreatin 1</a>
+<a onclick="showPage('')">Kreatin 2</a>
+</div>
+
+<button onclick="toggleCat(4)">Vitaminok</button>
+<div class="category-content">
+<a onclick="showPage('')">Vitamin 1</a>
+<a onclick="showPage('')">Vitamin 2</a>
+</div>
+
+<button onclick="toggleCat(5)">Teljesítményfokozók</button>
+<div class="category-content">
+<a onclick="showPage('')"> 1</a>
+<a onclick="showPage('')"> 2</a>
+</div>
+
+<button onclick="toggleCat(6)">Egyéb kiegészítők</button>
+<div class="category-content">
+<a onclick="showPage('')"> 1</a>
+<a onclick="showPage('')"> 2</a>
 </div>
 
 </aside>
@@ -363,11 +394,12 @@ footer{
 <p class="price">9 990 Ft</p>
 </div>
 
-<div class="product" onclick="showPage('kuma')">
-<img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png">
-<h3>Kuma Átka</h3>
-<p class="price">10 990 Ft</p>
+<div class="product" onclick="showPage('rovidzarlat')">
+<img src="Projekt termékek/rovidzarlat.png">
+<h3>Rövidzárlat</h3>
+<p class="price">12 540 Ft</p>
 </div>
+
 
 <div class="product" onclick="showPage('feherje')">
 <img src="Projekt termékek/Fehérje 1.png">
@@ -386,7 +418,8 @@ footer{
 <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
 
 <h2>Kalamajka Pre-Workout</h2><br>
-
+<h3>9 990 Ft</h3>
+<br>
 <img src="Projekt termékek/PREWORKOUT_1-removebg-preview.png" class="big-image">
 
 <p>Ultra brutális edzés előtti formula.</p><br>
@@ -398,12 +431,51 @@ Kosárba
 </div>
 </div>
 
+<div id="rovidzarlat" class="page">
+
+<div class="product-box">
+<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+
+<h2>Rövidzárlat Pre-Workout</h2><br>
+<h3>12 540 Ft</h3>
+<br>
+<img src="Projekt termékek/rovidzarlat.png" class="big-image">
+
+<p>Ultra brutális edzés előtti formula.</p><br>
+
+<button class="add-btn" onclick="addToCart('kalamajka',12540)">
+Kosárba
+</button>
+
+</div>
+</div>
+
+<div id="feherje2" class="page">
+
+<div class="product-box">
+<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+<h3>11 870 Ft</h3>
+<br>
+<h2>Overload Fehérje</h2><br>
+
+<img src="Projekt termékek/protein2.png" class="big-image">
+
+<p>Protein.</p><br>
+
+<button class="add-btn" onclick="addToCart('kalamajka',11870)">
+Kosárba
+</button>
+
+</div>
+</div>
+
 <div id="kuma" class="page">
 
 <div class="product-box">
 <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
 <h2>Kuma Átka</h2><br>
-
+<h3>10 990 Ft</h3>
+<br>
 <img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png" class="big-image">
 
 <p>Extrém energia.</p><br>
@@ -420,7 +492,8 @@ Kosárba
 <div class="product-box">
 <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
 <h2>Eszement Protein</h2><br>
-
+<h3>14 990 Ft</h3>
+<br>
 <img src="Projekt termékek/Fehérje 1.png" class="big-image">
 
 <p>Prémium fehérje izomnöveléshez.</p><br>
