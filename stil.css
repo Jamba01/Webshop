@@ -443,3 +443,31 @@ footer{
   width:240px;
   box-shadow:0 0 10px red;
 }
+
+/* MOBILE NAV FIX */
+
+@media(max-width:700px){
+
+  nav{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    position:static;
+    transform:none;
+    justify-content:center;
+  }
+
+  .nav-search{
+    margin-left:0;
+    width:100%;
+    text-align:center;
+  }
+
+  .nav-search input{
+    width:90%;
+    max-width:300px;
+  }
+
+}
