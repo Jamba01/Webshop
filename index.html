@@ -17,748 +17,721 @@
 </header>
 
 <nav>
-<div class="nav-links"> 
-  <a onclick="showPage('home')">Főoldal</a>
-  <a onclick="showPage('contact')">Kapcsolat</a>
-  <a onclick="showPage('cart')">Kosár (<span id="cartCount">0</span>)</a>
-</div> 
-<div class="nav-search">
+  <div class="nav-links"> 
+    <a onclick="showPage('home')">Főoldal</a>
+    <a onclick="showPage('contact')">Kapcsolat</a>
+    <a onclick="showPage('cart')">Kosár (<span id="cartCount">0</span>)</a>
+  </div> 
 
-  <input 
-    type="text" 
-    id="searchInput" 
-    placeholder="Keresés... (pl: Rövidzárlat)"
-    onkeyup="searchProducts()"
-  >
-
-</div>
+  <div class="nav-search">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Keresés... (pl: Rövidzárlat)"
+      onkeyup="searchProducts()"
+    >
+  </div>
 </nav>
 
 <main class="container">
 
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-<h1>Szűrő</h1>
-<br>
-<button onclick="toggleCat(0)">Edzéselőtti formulák</button>
-<div class="category-content">
-<a onclick="showPage('kalamajka')">Kalamajka</a>
-<a onclick="showPage('kuma')">Kuma Átka</a>
-<a onclick="showPage('rovidzarlat')">Rövidzárlat</a>
-</div>
-
-<button onclick="toggleCat(1)">Fehérjék</button>
-<div class="category-content">
-<a onclick="showPage('feherje')">Eszement</a>
-<a onclick="showPage('feherje2')">Overload</a>
-</div>
-
-<button onclick="toggleCat(2)">Tömegnövelők</button>
-<div class="category-content">
-<a onclick="showPage('')">Tömegnövelő 1</a>
-</div>
-
-<button onclick="toggleCat(3)">Kreatin</button>
-<div class="category-content">
-<a onclick="showPage('')">Kreatin 1</a>
-<a onclick="showPage('')">Kreatin 2</a>
-</div>
-
-<button onclick="toggleCat(4)">Vitaminok</button>
-<div class="category-content">
-<a onclick="showPage('')">Vitamin 1</a>
-<a onclick="showPage('')">Vitamin 2</a>
-</div>
-
-<button onclick="toggleCat(5)">Teljesítményfokozók</button>
-<div class="category-content">
-<a onclick="showPage('')"> 1</a>
-<a onclick="showPage('')"> 2</a>
-</div>
-
-<button onclick="toggleCat(6)">Egyéb kiegészítők</button>
-<div class="category-content">
-<a onclick="showPage('')"> 1</a>
-<a onclick="showPage('')"> 2</a>
-</div>
-
-</aside>
-
-<!-- MAIN -->
-
-<section class="main">
-
-<!-- HOME -->
-
-<div id="home" class="page active">
-
-<div class="hero-box">
-
-  <h1>ÜDV A KENGO NUTRITION-NÉL</h1>
-
-  <p class="hero-text">
-    Nem vitaminbolt.  
-    Veszélyes stimultánsokat árusító oldal.
-  </p>
-  <p class="hero-sub">  
-    Csak azoknak, akik komolyan tolják.
-  </p>
-
-</div>
-
-<div class="why-us">
-
-  <div class="why-box">
-    💥 Brutális formulák  
-    <span>Nem felhígított por.</span>
-  </div>
-
-  <div class="why-box">
-    ⚡ Gyors szállítás  
-    <span>Nem ülünk rajta hetekig.</span>
-  </div>
-
-  <div class="why-box">
-    🧠 Valódi fókusz  
-    <span>Nem placebo.</span>
-  </div>
-
-  <div class="why-box">
-    🏋️ Kondisoknak  
-    <span>Nem nyugdíjas vitamin.</span>
-  </div>
-
-</div>
-
-<div class="warning-box">
-
-⚠️ FIGYELEM ⚠️<br>
-Ez nem kezdőknek való webshop.  
-Ha puhány vagy, rossz helyen jársz.
-
-</div>
-
-<h2>Termékek</h2>
-
-<div class="products">
-
-<div class="product" onclick="showPage('kalamajka')">
-<img src="Projekt termékek/PREWORKOUT_1-removebg-preview.png">
-<h3>Kalamajka</h3>
-<p class="price">9 990 Ft</p>
-</div>
-
-<div class="product" onclick="showPage('rovidzarlat')">
-<img src="Projekt termékek/rovidzarlat.png">
-<h3>Rövidzárlat</h3>
-<p class="price">12 540 Ft</p>
-</div>
-
-
-<div class="product" onclick="showPage('feherje')">
-<img src="Projekt termékek/Fehérje 1.png">
-<h3>Eszement</h3>
-<p class="price">14 990 Ft</p>
-</div>
-
-<div class="product" onclick="showPage('kuma')">
-<img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png">
-<h3>Kuma átka</h3>
-<p class="price">10 990 Ft</p>
-</div>
-
-<div class="product" onclick="showPage('feherje2')">
-<img src="Projekt termékek/protein2.png">
-<h3>Overload</h3>
-<p class="price">11 870 Ft</p>
-</div>
-
-</div>
-</div>
-
-<!-- PRODUCT PAGES -->
-
-<div id="kalamajka" class="page">
-
-<div class="product-box">
-<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
-
-<h2>Kalamajka Pre-Workout</h2><br>
-<h3>9 990 Ft</h3>
-<br>
-<img src="Projekt termékek/PREWORKOUT_1-removebg-preview.png" class="big-image">
-
-<p>Ultra brutális edzés előtti formula.</p><br>
-
-<div class="supplement-box">
-
-<h3>Összetétel</h3>
-
-<table class="supplement-table">
-
-<tr>
-<th>Adag</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Adag mérete</td>
-<td>1 mérőkanál (18g)</td>
-</tr>
-
-<tr>
-<td>Adagok száma</td>
-<td>30</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Hatóanyag</th>
-<th>Mennyiség / adag</th>
-</tr>
-
-<tr>
-<td>Citrullin-malát</td>
-<td>6000 mg</td>
-</tr>
-
-<tr>
-<td>Béta-alanin</td>
-<td>3200 mg</td>
-</tr>
-
-<tr>
-<td>Kreatin-monohidrát</td>
-<td>3000 mg</td>
-</tr>
-
-<tr>
-<td>Arginin AKG</td>
-<td>2000 mg</td>
-</tr>
-
-<tr>
-<td>L-Tirozin</td>
-<td>1000 mg</td>
-</tr>
-
-<tr>
-<td>Koffein anhidrus</td>
-<td>350 mg</td>
-</tr>
-
-<tr>
-<td>Theacrine</td>
-<td>100 mg</td>
-</tr>
-
-<tr>
-<td>BioPerine®</td>
-<td>10 mg</td>
-</tr>
-
-</table>
-
-<p class="supplement-note">
-⚠️ Magas koffeintartalmú termék. Nem ajánlott gyermekeknek,
-terhes nőknek vagy koffeinre érzékenyeknek.
-</p>
-
-</div>
-
-<button class="add-btn" onclick="addToCart('kalamajka',9990)">
-Kosárba
-</button>
-
-</div>
-</div>
-
-<div id="rovidzarlat" class="page">
-
-<div class="product-box">
-<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
-
-<h2>Rövidzárlat Pre-Workout</h2><br>
-<h3>12 540 Ft</h3>
-<br>
-<img src="Projekt termékek/rovidzarlat.png" class="big-image">
-
-<p>Ultra brutális edzés előtti formula.</p><br>
-
-<div class="supplement-box">
-
-<h3>Összetétel</h3>
-
-<table class="supplement-table">
-
-<tr>
-<th>Adag</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Adag mérete</td>
-<td>1 mérőkanál (20g)</td>
-</tr>
-
-<tr>
-<td>Adagok száma</td>
-<td>25</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Hatóanyag</th>
-<th>Mennyiség / adag</th>
-</tr>
-
-<tr>
-<td>Citrullin-malát</td>
-<td>5000 mg</td>
-</tr>
-
-<tr>
-<td>Béta-alanin</td>
-<td>2800 mg</td>
-</tr>
-
-<tr>
-<td>Kreatin-monohidrát</td>
-<td>3500 mg</td>
-</tr>
-
-<tr>
-<td>Arginin AKG</td>
-<td>2200 mg</td>
-</tr>
-
-<tr>
-<td>L-Tirozin</td>
-<td>1000 mg</td>
-</tr>
-
-<tr>
-<td>Koffein anhidrus</td>
-<td>300 mg</td>
-</tr>
-
-<tr>
-<td>Theacrine</td>
-<td>100 mg</td>
-</tr>
-
-<tr>
-<td>BioPerine®</td>
-<td>10 mg</td>
-</tr>
-
-</table>
-
-<p class="supplement-note">
-⚠️ Magas koffeintartalmú termék. Nem ajánlott gyermekeknek,
-terhes nőknek vagy koffeinre érzékenyeknek.
-</p>
-
-</div>
-
-
-<button class="add-btn" onclick="addToCart('kalamajka',12540)">
-Kosárba
-</button>
-
-</div>
-</div>
-
-<div id="feherje2" class="page">
-
-<div class="product-box">
-<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
-<h3>11 870 Ft</h3>
-<br>
-<h2>Overload Fehérje</h2><br>
-
-
-
-<img src="Projekt termékek/protein2.png" class="big-image">
-
-<p>Protein.</p><br>
-
-<div class="supplement-box">
-
-<h3>Tápérték információ</h3>
-
-<table class="supplement-table">
-
-<tr>
-<th>Adag</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Adag mérete</td>
-<td>1 mérőkanál (30g)</td>
-</tr>
-
-<tr>
-<td>Adagok száma</td>
-<td>30</td>
-</tr>
-
-<tr>
-<td>Ízesítés</td>
-<td>Csokoládé</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Tápanyag</th>
-<th>Mennyiség / adag</th>
-</tr>
-
-<tr>
-<td>Energia</td>
-<td>106 kcal</td>
-</tr>
-
-<tr>
-<td>Fehérje</td>
-<td>22 g</td>
-</tr>
-
-<tr>
-<td>Szénhidrát</td>
-<td>2 g</td>
-</tr>
-
-<tr>
-<td>ebből cukor</td>
-<td>1.2 g</td>
-</tr>
-
-<tr>
-<td>Zsír</td>
-<td>1.1 g</td>
-</tr>
-
-<tr>
-<td>ebből telített zsír</td>
-<td>0.4 g</td>
-</tr>
-
-<tr>
-<td>Só</td>
-<td>0.4 g</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Fehérje forrás</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje koncentrátum</td>
-<td>18 g</td>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje izolátum</td>
-<td>2 g</td>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje hidrolizátum</td>
-<td>2 g</td>
-</tr>
-
-</table>
-
-<p class="supplement-note">
-⚠️ Tejet tartalmaz. Táplálékkiegészítő. A termék nem helyettesíti a változatos étrendet.
-</p>
-
-<button class="add-btn" onclick="addToCart('kalamajka',11870)">
-Kosárba
-</button>
-
-</div>
-</div>
-
-<div id="kuma" class="page">
-
-<div class="product-box">
-<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
-<h2>Kuma Átka</h2><br>
-<h3>10 990 Ft</h3>
-<br>
-<img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png" class="big-image">
-
-<p>Extrém energia.</p><br>
-
-<table class="supplement-table">
-
-<tr>
-<th>Adag</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Adag mérete</td>
-<td>1 mérőkanál (25g)</td>
-</tr>
-
-<tr>
-<td>Adagok száma</td>
-<td>32</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Hatóanyag</th>
-<th>Mennyiség / adag</th>
-</tr>
-
-<tr>
-<td>Citrullin-malát</td>
-<td>8000 mg</td>
-</tr>
-
-<tr>
-<td>Béta-alanin</td>
-<td>4000 mg</td>
-</tr>
-
-<tr>
-<td>Kreatin-monohidrát</td>
-<td>5000 mg</td>
-</tr>
-
-<tr>
-<td>Arginin AKG</td>
-<td>3000 mg</td>
-</tr>
-
-<tr>
-<td>L-Tirozin</td>
-<td>1000 mg</td>
-</tr>
-
-<tr>
-<td>Koffein anhidrus</td>
-<td>450 mg</td>
-</tr>
-
-<tr>
-<td>Theacrine</td>
-<td>100 mg</td>
-</tr>
-
-<tr>
-<td>BioPerine®</td>
-<td>10 mg</td>
-</tr>
-
-</table>
-
-
-<button class="add-btn" onclick="addToCart('kuma',10990)">
-Kosárba
-</button>
-
-</div>
-</div>
-
-<div id="feherje" class="page">
-
-<div class="product-box">
-<button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
-<h2>Eszement Protein</h2><br>
-<h3>14 990 Ft</h3>
-<br>
-<img src="Projekt termékek/Fehérje 1.png" class="big-image">
-
-<p>Prémium fehérje izomnöveléshez.</p><br>
-
-<div class="supplement-box">
-
-<h3>Tápérték információ</h3>
-
-<table class="supplement-table">
-
-<tr>
-<th>Adag</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Adag mérete</td>
-<td>1 mérőkanál (30g)</td>
-</tr>
-
-<tr>
-<td>Adagok száma</td>
-<td>30</td>
-</tr>
-
-<tr>
-<td>Ízesítés</td>
-<td>Csokoládé</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Tápanyag</th>
-<th>Mennyiség / adag</th>
-</tr>
-
-<tr>
-<td>Energia</td>
-<td>120 kcal</td>
-</tr>
-
-<tr>
-<td>Fehérje</td>
-<td>24 g</td>
-</tr>
-
-<tr>
-<td>Szénhidrát</td>
-<td>3 g</td>
-</tr>
-
-<tr>
-<td>ebből cukor</td>
-<td>1.5 g</td>
-</tr>
-
-<tr>
-<td>Zsír</td>
-<td>1.5 g</td>
-</tr>
-
-<tr>
-<td>ebből telített zsír</td>
-<td>0.8 g</td>
-</tr>
-
-<tr>
-<td>Só</td>
-<td>0.2 g</td>
-</tr>
-
-</table>
-
-<table class="supplement-table">
-
-<tr>
-<th>Fehérje forrás</th>
-<th>Mennyiség</th>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje koncentrátum</td>
-<td>18 g</td>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje izolátum</td>
-<td>5 g</td>
-</tr>
-
-<tr>
-<td>Tejsavó fehérje hidrolizátum</td>
-<td>1 g</td>
-</tr>
-
-</table>
-
-<p class="supplement-note">
-⚠️ Tejet tartalmaz. Táplálékkiegészítő. A termék nem helyettesíti a változatos étrendet.
-</p>
-
-</div>
-
-<button class="add-btn" onclick="addToCart('feherje',14990)">
-Kosárba
-</button>
-
-</div>
-</div>
-
-<!-- CONTACT -->
-
-<div id="contact" class="page">
-
-  <h2>Kapcsolat</h2>
-  <p class="contact-intro">
-    Kérdésed van? Elborult az adagolás? Nem tudod, melyik cucc robbantja szét legjobban az edzésed?
-    Írj nekünk. Válaszolunk. Nem ghostolunk.
-  </p>
-
-  <div class="contact-box">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1>Szűrő</h1>
     <br>
-    <h3>📩 Elérhetőség</h3>
-    <p><strong>Email:</strong><i> info@kengo.hu</i></p>
-    <p><strong>Válaszidő:</strong> 24–48 óra (edzésidőn kívül 😉)</p>
-    <br>
-    <h3>📦 Rendeléssel kapcsolatban</h3>
-    <p>
-      Ha kérdésed van a szállításról, fizetésről vagy a csomagoddal,
-      írd meg a rendelési azonosítót is, hogy ne kelljen találgatnunk.
-    </p>
-    <br>
-    <h3>💥 Termékekkel kapcsolatban</h3>
-    <p>
-      Nem tudod, hogy <em>Rövidzárlat</em>, <em>Agyrobbanás</em> vagy <em>Idegbaj</em> való neked?
-      Segítünk kiválasztani a neked való brutál cuccot.
-    </p>
-    <br>
-    <h3>⚠️ Fontos</h3>
-    <p class="contact-warning">
-      A termékeink erősek. Ha érzékeny vagy koffeinre vagy stimulánsokra,
-      mindig olvasd el a leírást. Ha bizonytalan vagy: kérdezz, mielőtt beletolod.
-    </p>
 
-  </div>
+    <button onclick="toggleCat(0)">Edzéselőtti formulák</button>
+    <div class="category-content">
+      <a onclick="showPage('kalamajka')">Kalamajka</a>
+      <a onclick="showPage('kuma')">Kuma Átka</a>
+      <a onclick="showPage('rovidzarlat')">Rövidzárlat</a>
+    </div>
 
-</div>
+    <button onclick="toggleCat(1)">Fehérjék</button>
+    <div class="category-content">
+      <a onclick="showPage('feherje')">Eszement</a>
+      <a onclick="showPage('feherje2')">Overload</a>
+    </div>
 
-<!-- CART -->
+    <button onclick="toggleCat(2)">Tömegnövelők</button>
+    <div class="category-content">
+      <a onclick="showPage('agyrobbanas')">Agyrobbanás</a>
+    </div>
 
-<div id="cart" class="page">
+    <button onclick="toggleCat(3)">Kreatin</button>
+    <div class="category-content">
+      <a href="javascript:void(0)">Kreatin 1</a>
+      <a href="javascript:void(0)">Kreatin 2</a>
+    </div>
 
-<h2>Kosár</h2><br>
+    <button onclick="toggleCat(4)">Vitaminok</button>
+    <div class="category-content">
+      <a href="javascript:void(0)">Vitamin 1</a>
+      <a href="javascript:void(0)">Vitamin 2</a>
+    </div>
 
-<div id="cartItems"></div>
+    <button onclick="toggleCat(5)">Teljesítményfokozók</button>
+    <div class="category-content">
+      <a href="javascript:void(0)">1</a>
+      <a href="javascript:void(0)">2</a>
+    </div>
 
-<h3>Összesen: <span id="total">0</span> Ft</h3>
+    <button onclick="toggleCat(6)">Egyéb kiegészítők</button>
+    <div class="category-content">
+      <a href="javascript:void(0)">1</a>
+      <a href="javascript:void(0)">2</a>
+    </div>
+  </aside>
 
-<button class="checkout-btn" onclick="checkout()">
-Vásárlás
-</button>
+  <!-- MAIN -->
+  <section class="main">
 
-</div>
+    <!-- HOME -->
+    <div id="home" class="page active">
 
-</section>
+      <div class="hero-box">
+        <h1>ÜDV A KENGO NUTRITION-NÉL</h1>
+
+        <p class="hero-text">
+          Nem vitaminbolt.  
+          Veszélyes stimultánsokat árusító oldal.
+        </p>
+
+        <p class="hero-sub">  
+          Csak azoknak, akik komolyan tolják.
+        </p>
+      </div>
+
+      <div class="why-us">
+        <div class="why-box">
+          💥 Brutális formulák  
+          <span>Nem felhígított por.</span>
+        </div>
+
+        <div class="why-box">
+          ⚡ Gyors szállítás  
+          <span>Nem ülünk rajta hetekig.</span>
+        </div>
+
+        <div class="why-box">
+          🧠 Valódi fókusz  
+          <span>Nem placebo.</span>
+        </div>
+
+        <div class="why-box">
+          🏋️ Kondisoknak  
+          <span>Nem nyugdíjas vitamin.</span>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        ⚠️ FIGYELEM ⚠️<br>
+        Ez nem kezdőknek való webshop.  
+        Ha puhány vagy, rossz helyen jársz.
+      </div>
+
+      <h2>Termékek</h2>
+
+      <div class="products">
+
+        <div class="product" onclick="showPage('kalamajka')">
+          <img src="Projekt termékek/PREWORKOUT_1-removebg-preview.png">
+          <h3>Kalamajka</h3>
+          <p class="price">9 990 Ft</p>
+        </div>
+
+        <div class="product" onclick="showPage('rovidzarlat')">
+          <img src="Projekt termékek/rovidzarlat.png">
+          <h3>Rövidzárlat</h3>
+          <p class="price">12 540 Ft</p>
+        </div>
+
+        <div class="product" onclick="showPage('feherje')">
+          <img src="Projekt termékek/Fehérje 1.png">
+          <h3>Eszement</h3>
+          <p class="price">14 990 Ft</p>
+        </div>
+
+        <div class="product" onclick="showPage('kuma')">
+          <img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png">
+          <h3>Kuma átka</h3>
+          <p class="price">10 990 Ft</p>
+        </div>
+
+        <div class="product" onclick="showPage('feherje2')">
+          <img src="Projekt termékek/protein2.png">
+          <h3>Overload</h3>
+          <p class="price">11 870 Ft</p>
+        </div>
+
+        <div class="product" onclick="showPage('agyrobbanas')">
+          <img src="Projekt termékek/agyrobbanás-removebg-preview.png">
+          <h3>Agyrobbanás</h3>
+          <p class="price">19 520 Ft</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KALAMAJKA -->
+    <div id="kalamajka" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+
+        <h2>Kalamajka Pre-Workout</h2><br>
+        <h3>9 990 Ft</h3>
+        <br>
+        <img src="Projekt termékek/PREWORKOUT_1-removebg-preview.png" class="big-image">
+
+        <p>Ultra brutális edzés előtti formula.</p><br>
+
+        <div class="supplement-box">
+          <h3>Összetétel</h3>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Adag</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Adag mérete</td>
+              <td>1 mérőkanál (18g)</td>
+            </tr>
+            <tr>
+              <td>Adagok száma</td>
+              <td>30</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Hatóanyag</th>
+              <th>Mennyiség / adag</th>
+            </tr>
+            <tr>
+              <td>Citrullin-malát</td>
+              <td>6000 mg</td>
+            </tr>
+            <tr>
+              <td>Béta-alanin</td>
+              <td>3200 mg</td>
+            </tr>
+            <tr>
+              <td>Kreatin-monohidrát</td>
+              <td>3000 mg</td>
+            </tr>
+            <tr>
+              <td>Arginin AKG</td>
+              <td>2000 mg</td>
+            </tr>
+            <tr>
+              <td>L-Tirozin</td>
+              <td>1000 mg</td>
+            </tr>
+            <tr>
+              <td>Koffein anhidrus</td>
+              <td>350 mg</td>
+            </tr>
+            <tr>
+              <td>Theacrine</td>
+              <td>100 mg</td>
+            </tr>
+            <tr>
+              <td>BioPerine®</td>
+              <td>10 mg</td>
+            </tr>
+          </table>
+
+          <p class="supplement-note">
+            ⚠️ Magas koffeintartalmú termék. Nem ajánlott gyermekeknek,
+            terhes nőknek vagy koffeinre érzékenyeknek.
+          </p>
+        </div>
+
+        <button class="add-btn" onclick="addToCart('kalamajka', 9990)">
+          Kosárba
+        </button>
+      </div>
+    </div>
+
+    <!-- RÖVIDZÁRLAT -->
+    <div id="rovidzarlat" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+
+        <h2>Rövidzárlat Pre-Workout</h2><br>
+        <h3>12 540 Ft</h3>
+        <br>
+        <img src="Projekt termékek/rovidzarlat.png" class="big-image">
+
+        <p>Ultra brutális edzés előtti formula.</p><br>
+
+        <div class="supplement-box">
+          <h3>Összetétel</h3>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Adag</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Adag mérete</td>
+              <td>1 mérőkanál (20g)</td>
+            </tr>
+            <tr>
+              <td>Adagok száma</td>
+              <td>25</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Hatóanyag</th>
+              <th>Mennyiség / adag</th>
+            </tr>
+            <tr>
+              <td>Citrullin-malát</td>
+              <td>5000 mg</td>
+            </tr>
+            <tr>
+              <td>Béta-alanin</td>
+              <td>2800 mg</td>
+            </tr>
+            <tr>
+              <td>Kreatin-monohidrát</td>
+              <td>3500 mg</td>
+            </tr>
+            <tr>
+              <td>Arginin AKG</td>
+              <td>2200 mg</td>
+            </tr>
+            <tr>
+              <td>L-Tirozin</td>
+              <td>1000 mg</td>
+            </tr>
+            <tr>
+              <td>Koffein anhidrus</td>
+              <td>300 mg</td>
+            </tr>
+            <tr>
+              <td>Theacrine</td>
+              <td>100 mg</td>
+            </tr>
+            <tr>
+              <td>BioPerine®</td>
+              <td>10 mg</td>
+            </tr>
+          </table>
+
+          <p class="supplement-note">
+            ⚠️ Magas koffeintartalmú termék. Nem ajánlott gyermekeknek,
+            terhes nőknek vagy koffeinre érzékenyeknek.
+          </p>
+        </div>
+
+        <button class="add-btn" onclick="addToCart('rovidzarlat', 12540)">
+          Kosárba
+        </button>
+      </div>
+    </div>
+
+    <!-- OVERLOAD -->
+    <div id="feherje2" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+        <h3>11 870 Ft</h3>
+        <br>
+        <h2>Overload Fehérje</h2><br>
+
+        <img src="Projekt termékek/protein2.png" class="big-image">
+
+        <p>Protein.</p><br>
+
+        <div class="supplement-box">
+          <h3>Tápérték információ</h3>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Adag</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Adag mérete</td>
+              <td>1 mérőkanál (30g)</td>
+            </tr>
+            <tr>
+              <td>Adagok száma</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Ízesítés</td>
+              <td>Csokoládé</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Tápanyag</th>
+              <th>Mennyiség / adag</th>
+            </tr>
+            <tr>
+              <td>Energia</td>
+              <td>106 kcal</td>
+            </tr>
+            <tr>
+              <td>Fehérje</td>
+              <td>22 g</td>
+            </tr>
+            <tr>
+              <td>Szénhidrát</td>
+              <td>2 g</td>
+            </tr>
+            <tr>
+              <td>ebből cukor</td>
+              <td>1.2 g</td>
+            </tr>
+            <tr>
+              <td>Zsír</td>
+              <td>1.1 g</td>
+            </tr>
+            <tr>
+              <td>ebből telített zsír</td>
+              <td>0.4 g</td>
+            </tr>
+            <tr>
+              <td>Só</td>
+              <td>0.4 g</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Fehérje forrás</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje koncentrátum</td>
+              <td>18 g</td>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje izolátum</td>
+              <td>2 g</td>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje hidrolizátum</td>
+              <td>2 g</td>
+            </tr>
+          </table>
+
+          <p class="supplement-note">
+            ⚠️ Tejet tartalmaz. Táplálékkiegészítő. A termék nem helyettesíti a változatos étrendet.
+          </p>
+
+          <button class="add-btn" onclick="addToCart('feherje2', 11870)">
+            Kosárba
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KUMA -->
+    <div id="kuma" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+        <h2>Kuma Átka</h2><br>
+        <h3>10 990 Ft</h3>
+        <br>
+        <img src="Projekt termékek/PREWORKOUT_2-removebg-preview.png" class="big-image">
+
+        <p>Extrém energia.</p><br>
+
+        <table class="supplement-table">
+          <tr>
+            <th>Adag</th>
+            <th>Mennyiség</th>
+          </tr>
+          <tr>
+            <td>Adag mérete</td>
+            <td>1 mérőkanál (25g)</td>
+          </tr>
+          <tr>
+            <td>Adagok száma</td>
+            <td>32</td>
+          </tr>
+        </table>
+
+        <table class="supplement-table">
+          <tr>
+            <th>Hatóanyag</th>
+            <th>Mennyiség / adag</th>
+          </tr>
+          <tr>
+            <td>Citrullin-malát</td>
+            <td>8000 mg</td>
+          </tr>
+          <tr>
+            <td>Béta-alanin</td>
+            <td>4000 mg</td>
+          </tr>
+          <tr>
+            <td>Kreatin-monohidrát</td>
+            <td>5000 mg</td>
+          </tr>
+          <tr>
+            <td>Arginin AKG</td>
+            <td>3000 mg</td>
+          </tr>
+          <tr>
+            <td>L-Tirozin</td>
+            <td>1000 mg</td>
+          </tr>
+          <tr>
+            <td>Koffein anhidrus</td>
+            <td>450 mg</td>
+          </tr>
+          <tr>
+            <td>Theacrine</td>
+            <td>100 mg</td>
+          </tr>
+          <tr>
+            <td>BioPerine®</td>
+            <td>10 mg</td>
+          </tr>
+        </table>
+
+        <button class="add-btn" onclick="addToCart('kuma', 10990)">
+          Kosárba
+        </button>
+      </div>
+    </div>
+
+    <!-- ESZEMENT -->
+    <div id="feherje" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+        <h2>Eszement Protein</h2><br>
+        <h3>14 990 Ft</h3>
+        <br>
+        <img src="Projekt termékek/Fehérje 1.png" class="big-image">
+
+        <p>Prémium fehérje izomnöveléshez.</p><br>
+
+        <div class="supplement-box">
+          <h3>Tápérték információ</h3>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Adag</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Adag mérete</td>
+              <td>1 mérőkanál (30g)</td>
+            </tr>
+            <tr>
+              <td>Adagok száma</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Ízesítés</td>
+              <td>Csokoládé</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Tápanyag</th>
+              <th>Mennyiség / adag</th>
+            </tr>
+            <tr>
+              <td>Energia</td>
+              <td>120 kcal</td>
+            </tr>
+            <tr>
+              <td>Fehérje</td>
+              <td>24 g</td>
+            </tr>
+            <tr>
+              <td>Szénhidrát</td>
+              <td>3 g</td>
+            </tr>
+            <tr>
+              <td>ebből cukor</td>
+              <td>1.5 g</td>
+            </tr>
+            <tr>
+              <td>Zsír</td>
+              <td>1.5 g</td>
+            </tr>
+            <tr>
+              <td>ebből telített zsír</td>
+              <td>0.8 g</td>
+            </tr>
+            <tr>
+              <td>Só</td>
+              <td>0.2 g</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Fehérje forrás</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje koncentrátum</td>
+              <td>18 g</td>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje izolátum</td>
+              <td>5 g</td>
+            </tr>
+            <tr>
+              <td>Tejsavó fehérje hidrolizátum</td>
+              <td>1 g</td>
+            </tr>
+          </table>
+
+          <p class="supplement-note">
+            ⚠️ Tejet tartalmaz. Táplálékkiegészítő. A termék nem helyettesíti a változatos étrendet.
+          </p>
+        </div>
+
+        <button class="add-btn" onclick="addToCart('feherje', 14990)">
+          Kosárba
+        </button>
+      </div>
+    </div>
+
+    <div id="agyrobbanas" class="page">
+      <div class="product-box">
+        <button class="back-btn" onclick="goBack()">← Vissza a főoldalra</button>
+        <h2>Agyrobbanás tömegnövelő</h2><br>
+        <h3>19 520 Ft</h3>
+        <br>
+        <img src="Projekt termékek/agyrobbanás-removebg-preview.png" class="big-image">
+
+        <p>Tömegnövelő.</p><br>
+
+        <div class="supplement-box">
+          <h3>Tápérték információ</h3>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Adag</th>
+              <th>Mennyiség</th>
+            </tr>
+            <tr>
+              <td>Adag mérete</td>
+              <td>4 mérőkanál (120g)</td>
+            </tr>
+            <tr>
+              <td>Adagok száma</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Ízesítés</td>
+              <td>Csokoládé</td>
+            </tr>
+          </table>
+
+          <table class="supplement-table">
+            <tr>
+              <th>Tápanyag</th>
+              <th>Mennyiség / adag</th>
+            </tr>
+            <tr>
+              <td>Energia</td>
+              <td>1220 kcal</td>
+            </tr>
+            <tr>
+              <td>Fehérje</td>
+              <td>52 g</td>
+            </tr>
+            <tr>
+              <td>Szénhidrát</td>
+              <td>176 g</td>
+            </tr>
+            <tr>
+              <td>ebből cukor</td>
+              <td>34 g</td>
+            </tr>
+            <tr>
+              <td>Zsír</td>
+              <td>12 g</td>
+            </tr>
+            <tr>
+              <td>ebből telített zsír</td>
+              <td>4 g</td>
+            </tr>
+            <tr>
+              <td>Só</td>
+              <td>2 g</td>
+            </tr>
+          </table>
+
+          <p class="supplement-note">
+            ⚠️ Táplálékkiegészítő. A termék nem helyettesíti a változatos étrendet.
+          </p>
+        </div>
+
+        <button class="add-btn" onclick="addToCart('agyrobbanas', 19520)">
+          Kosárba
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="page">
+      <h2>Kapcsolat</h2>
+      <p class="contact-intro">
+        Kérdésed van? Elborult az adagolás? Nem tudod, melyik cucc robbantja szét legjobban az edzésed?
+        Írj nekünk. Válaszolunk. Nem ghostolunk.
+      </p>
+
+      <div class="contact-box">
+        <br>
+        <h3>📩 Elérhetőség</h3>
+        <p><strong>Email:</strong> <i>info@kengo.hu</i></p>
+        <p><strong>Válaszidő:</strong> 24–48 óra (edzésidőn kívül 😉)</p>
+        <br>
+
+        <h3>📦 Rendeléssel kapcsolatban</h3>
+        <p>
+          Ha kérdésed van a szállításról, fizetésről vagy a csomagoddal,
+          írd meg a rendelési azonosítót is, hogy ne kelljen találgatnunk.
+        </p>
+        <br>
+
+        <h3>💥 Termékekkel kapcsolatban</h3>
+        <p>
+          Nem tudod, hogy <em>Rövidzárlat</em>, <em>Agyrobbanás</em> vagy <em>Idegbaj</em> való neked?
+          Segítünk kiválasztani a neked való brutál cuccot.
+        </p>
+        <br>
+
+        <h3>⚠️ Fontos</h3>
+        <p class="contact-warning">
+          A termékeink erősek. Ha érzékeny vagy koffeinre vagy stimulánsokra,
+          mindig olvasd el a leírást. Ha bizonytalan vagy: kérdezz, mielőtt beletolod.
+        </p>
+      </div>
+    </div>
+
+    <!-- CART -->
+    <div id="cart" class="page">
+      <h2>Kosár</h2><br>
+
+      <div id="cartItems"></div>
+
+      <h3>Összesen: <span id="total">0</span> Ft</h3>
+
+      <button class="checkout-btn" onclick="checkout()">
+        Vásárlás
+      </button>
+    </div>
+
+  </section>
 </main>
 
 <footer>
@@ -766,114 +739,109 @@ Vásárlás
 </footer>
 
 <script>
-
 /* NAV SYSTEM */
 
 function showPage(id){
+  const target = document.getElementById(id);
+
+  if(!target){
+    console.error("Nincs ilyen oldal:", id);
+    return;
+  }
 
   document
     .querySelectorAll('.page')
-    .forEach(p=>p.classList.remove('active'));
+    .forEach(p => p.classList.remove('active'));
 
-  document
-    .getElementById(id)
-    .classList.add('active');
+  target.classList.add('active');
 
-  if(id==="cart") renderCart();
+  if(id === "cart"){
+    renderCart();
+  }
 }
 
 /* CATEGORY */
 
 function toggleCat(i){
-
-  const cats=document.querySelectorAll('.category-content');
+  const cats = document.querySelectorAll('.category-content');
 
   cats[i].style.display =
-    cats[i].style.display==="block"
+    cats[i].style.display === "block"
     ? "none"
     : "block";
 }
 
 /* CART */
 
-let cart=[];
+let cart = [];
 
-function addToCart(id,price){
+function addToCart(id, price){
+  let item = cart.find(p => p.id === id);
 
-  let item=cart.find(p=>p.id===id);
-
-  if(item) item.qty++;
-  else cart.push({id,price,qty:1});
+  if(item){
+    item.qty++;
+  } else {
+    cart.push({id, price, qty: 1});
+  }
 
   updateCart();
-
   alert("Kosárba téve!");
 }
 
 function updateCart(){
-
   document.getElementById("cartCount").innerText =
-    cart.reduce((s,i)=>s+i.qty,0);
+    cart.reduce((s, i) => s + i.qty, 0);
 }
 
 function renderCart(){
+  const box = document.getElementById("cartItems");
+  box.innerHTML = "";
 
-  const box=document.getElementById("cartItems");
+  let sum = 0;
 
-  box.innerHTML="";
+  cart.forEach(item => {
+    sum += item.price * item.qty;
 
-  let sum=0;
+    const div = document.createElement("div");
+    div.className = "cart-item";
 
-  cart.forEach(item=>{
-
-    sum+=item.price*item.qty;
-
-    const div=document.createElement("div");
-
-    div.className="cart-item";
-
-    div.innerHTML=`
-
+    div.innerHTML = `
       <div style="flex:1">${item.id}</div>
-
-      <input type="number" min="1"
-        value="${item.qty}"
-        onchange="changeQty('${item.id}',this.value)">
-
-      <div>${item.price*item.qty} Ft</div>
-
+      <input type="number" min="1" value="${item.qty}" onchange="changeQty('${item.id}', this.value)">
+      <div>${item.price * item.qty} Ft</div>
     `;
 
     box.appendChild(div);
   });
 
-  document.getElementById("total").innerText=sum;
+  document.getElementById("total").innerText = sum;
 }
 
-function changeQty(id,val){
+function changeQty(id, val){
+  let item = cart.find(p => p.id === id);
 
-  let item=cart.find(p=>p.id===id);
+  if(!item) return;
 
-  item.qty=parseInt(val);
+  item.qty = parseInt(val);
+
+  if(isNaN(item.qty) || item.qty < 1){
+    item.qty = 1;
+  }
 
   renderCart();
-
   updateCart();
 }
 
 function checkout(){
-
-  if(cart.length===0){
+  if(cart.length === 0){
     alert("Üres a kosár!");
     return;
   }
 
   alert("Sikeres vásárlás!");
 
-  cart=[];
-
+  cart = [];
   renderCart();
-
   updateCart();
 }
 
@@ -884,35 +852,28 @@ function goBack(){
 /* SEARCH SYSTEM */
 
 function searchProducts(){
-
-  const input =
-    document.getElementById("searchInput")
+  const input = document
+    .getElementById("searchInput")
     .value
     .toLowerCase();
 
-  const products =
-    document.querySelectorAll(".product");
+  const products = document.querySelectorAll(".product");
 
-  products.forEach(product=>{
-
-    const name =
-      product
+  products.forEach(product => {
+    const name = product
       .querySelector("h3")
       .innerText
       .toLowerCase();
 
     if(name.includes(input)){
-      product.style.display="flex";
-    }else{
-      product.style.display="none";
+      product.style.display = "flex";
+    } else {
+      product.style.display = "none";
     }
-
   });
 
-  // automatikusan főoldalra dob
   showPage("home");
 }
-
 </script>
 
 </body>
